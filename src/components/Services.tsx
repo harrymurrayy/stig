@@ -59,15 +59,17 @@ export default function Services() {
               <div className="service-tag">{s.short}</div>
               <h3 className="service-name">{s.name}</h3>
               <p className="service-desc">{s.desc}</p>
-              <a
-                className="service-link"
-                href="/contact?type=support"
-                style={{ color: "var(--accent)" }}
-              >
-                Get in touch <Icon name="arrow" size={16} />
-              </a>
             </article>
           ))}
+        </div>
+        <div style={{ marginTop: 48, textAlign: "center" }}>
+          <a
+            className="btn btn-primary"
+            href="/contact?type=support"
+            style={{ background: "var(--accent)" }}
+          >
+            Get in touch <Icon name="arrow" size={18} />
+          </a>
         </div>
       </div>
     </section>
