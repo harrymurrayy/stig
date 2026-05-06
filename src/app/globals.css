@@ -736,11 +736,11 @@ button { font: inherit; cursor: pointer; }
 .contact-route .ind { color: var(--accent); font-weight: 600; }
 
 .contact-form {
-  background: var(--paper);
+  background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) + 4px);
   padding: 36px;
-  box-shadow: 0 30px 60px -40px rgba(42, 37, 33, 0.18);
+  box-shadow: 0 24px 60px -20px rgba(42, 37, 33, 0.16);
 }
 .form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
 .form-row label {
@@ -754,8 +754,8 @@ button { font: inherit; cursor: pointer; }
 .form-row input, .form-row textarea {
   font: inherit;
   font-size: 15.5px;
-  background: var(--paper-2);
-  border: 1.5px solid transparent;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
   border-radius: 12px;
   padding: 13px 16px;
   color: var(--ink);
@@ -763,7 +763,6 @@ button { font: inherit; cursor: pointer; }
 }
 .form-row input:focus, .form-row textarea:focus {
   outline: none;
-  background: var(--paper);
   border-color: var(--accent);
 }
 .form-row textarea { resize: vertical; min-height: 140px; }
@@ -805,6 +804,8 @@ button { font: inherit; cursor: pointer; }
   .donate-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .match-banner { padding: 32px 28px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-page { padding: 56px 0 80px; }
 }
 @media (max-width: 560px) {
   .container, .nav-inner { padding-left: 22px; padding-right: 22px; }
@@ -816,4 +817,5 @@ button { font: inherit; cursor: pointer; }
   .footer-base { flex-direction: column; gap: 8px; }
   .donate-amounts { grid-template-columns: repeat(3, 1fr); }
   .logo-sub { display: none; }
+  .contact-form { padding: 24px; }
 }
