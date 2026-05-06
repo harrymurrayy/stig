@@ -3,20 +3,37 @@ interface LogoProps {
 }
 
 export default function Logo({ footer = false }: LogoProps) {
+  if (footer) {
+    return (
+      <a href="/" className="logo">
+        {/* Icon-only variant — stays legible on the dark footer background */}
+        <img
+          src="/Stig-icon.svg"
+          alt=""
+          aria-hidden="true"
+          className="logo-icon"
+          style={{ height: 40, width: "auto" }}
+        />
+        <span className="logo-text">
+          <span className="logo-name">The Stig Initiative</span>
+          <span className="logo-sub">The Jack Murray Foundation</span>
+        </span>
+      </a>
+    );
+  }
+
   return (
     <a href="#top" className="logo">
-      <span
-        className="logo-mark"
-        style={{ background: "var(--accent)" }}
+      <img
+        src="/Stig-icon.svg"
+        alt=""
         aria-hidden="true"
-      >
-        <span className="logo-mark-inner" />
-      </span>
+        className="logo-icon"
+        style={{ height: 40, width: "auto" }}
+      />
       <span className="logo-text">
         <span className="logo-name">The Stig Initiative</span>
-        <span className="logo-sub">
-          {footer ? "The Jack Murray Foundation" : "The Jack Murray Foundation"}
-        </span>
+        <span className="logo-sub">The Jack Murray Foundation</span>
       </span>
     </a>
   );

@@ -12,8 +12,8 @@ export default function Hero() {
               <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
             </radialGradient>
             <radialGradient id="g2" cx="80%" cy="75%" r="55%">
-              <stop offset="0%" stopColor="#D9A05B" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#D9A05B" stopOpacity="0" />
+              <stop offset="0%" stopColor="#2C7EDE" stopOpacity="0.10" />
+              <stop offset="100%" stopColor="#2C7EDE" stopOpacity="0" />
             </radialGradient>
           </defs>
           <rect width="800" height="800" fill="url(#g1)" />

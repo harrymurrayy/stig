@@ -2,13 +2,13 @@
 
 /* ─── Design tokens ─────────────────────────────────────────────────────── */
 :root {
-  --accent: #C2674A;
-  --paper: #F7F2EB;
-  --paper-2: #EFE6D8;
-  --paper-3: #F1E4D4;
-  --ink: #2A2521;
-  --line: #E0D6C7;
-  --muted: #6E635A;
+  --accent: #2C7EDE;
+  --paper: #F5F8FD;
+  --paper-2: #EBF1FB;
+  --paper-3: #E3EBF8;
+  --ink: #1C2B3A;
+  --line: #D0DCF0;
+  --muted: #5B6F8A;
   --radius: 18px;
   --radius-sm: 10px;
   --heading-font: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
@@ -66,21 +66,11 @@ button { font: inherit; cursor: pointer; }
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
-.logo-mark {
-  width: 38px; height: 38px;
-  border-radius: 11px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  flex: none;
-}
-.logo-mark-inner {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--paper);
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.35) inset;
-}
+/* nav variant — SVG image fills the anchor */
+.logo img { display: block; }
+.logo-icon { flex: none; display: block; }
 .logo-text {
   display: flex;
   flex-direction: column;
@@ -618,8 +608,8 @@ button { font: inherit; cursor: pointer; }
   padding: 72px 0 32px;
 }
 .footer .logo { color: var(--paper); }
+.footer .logo-name { color: var(--paper); }
 .footer .logo-sub { color: color-mix(in oklab, var(--paper) 55%, transparent); }
-.footer .logo-mark-inner { background: var(--ink); }
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
