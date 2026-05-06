@@ -5,10 +5,10 @@ import Logo from "./Logo";
 import Icon from "./Icon";
 
 const NAV_LINKS = [
-  { id: "about", label: "About" },
-  { id: "services", label: "Services" },
-  { id: "involved", label: "Get Involved" },
-  { id: "donate", label: "Donate" },
+  { href: "/#about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#involved", label: "Get Involved" },
+  { href: "/#donate", label: "Donate" },
 ];
 
 export default function Nav() {
@@ -30,14 +30,14 @@ export default function Nav() {
         <Logo />
         <nav className="nav-links" aria-label="Primary">
           {NAV_LINKS.map((l) => (
-            <a key={l.id} href={`#${l.id}`} onClick={close}>
+            <a key={l.href} href={l.href} onClick={close}>
               {l.label}
             </a>
           ))}
           <a href="/contact">Contact</a>
           <a
             className="nav-cta"
-            href="#donate"
+            href="/#donate"
             onClick={close}
             style={{ background: "var(--accent)" }}
           >
@@ -56,7 +56,7 @@ export default function Nav() {
       {open && (
         <div className="nav-mobile" role="dialog">
           {NAV_LINKS.map((l) => (
-            <a key={l.id} href={`#${l.id}`} onClick={close}>
+            <a key={l.href} href={l.href} onClick={close}>
               {l.label}
             </a>
           ))}
@@ -65,7 +65,7 @@ export default function Nav() {
           </a>
           <a
             className="nav-cta-mobile"
-            href="#donate"
+            href="/#donate"
             onClick={close}
             style={{ background: "var(--accent)" }}
           >

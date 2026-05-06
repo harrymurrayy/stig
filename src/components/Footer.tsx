@@ -13,10 +13,10 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <div className="footer-h">Explore</div>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#involved">Get Involved</a>
-          <a href="#donate">Donate</a>
+          <a href="/#about">About</a>
+          <a href="/#services">Services</a>
+          <a href="/#involved">Get Involved</a>
+          <a href="/#donate">Donate</a>
         </div>
         <div className="footer-col">
           <div className="footer-h">Get in touch</div>
