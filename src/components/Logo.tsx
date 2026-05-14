@@ -16,7 +16,7 @@ export default function Logo({ footer = false }: LogoProps) {
         />
         <span className="logo-text">
           <span className="logo-name">The Stig Initiative</span>
-          <span className="logo-sub">The Jack Murray Foundation</span>
+          <span className="logo-sub">The Jack Murray Trust</span>
         </span>
       </a>
     );
@@ -33,7 +33,7 @@ export default function Logo({ footer = false }: LogoProps) {
       />
       <span className="logo-text">
         <span className="logo-name">The Stig Initiative</span>
-        <span className="logo-sub">The Jack Murray Foundation</span>
+        <span className="logo-sub">The Jack Murray Trust</span>
       </span>
     </a>
   );

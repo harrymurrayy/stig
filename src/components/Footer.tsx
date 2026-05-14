@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-base container">
-        <div>© {new Date().getFullYear()} The Jack Murray Foundation Ltd.</div>
+        <div>© {new Date().getFullYear()} The Jack Murray Trust Ltd.</div>
         <div>Registered Charity [number TBC]</div>
       </div>
     </footer>

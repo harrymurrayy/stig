@@ -19,7 +19,7 @@ export default function About() {
           </p>
           <p className="about-foot">
             The Stig Initiative is the public-facing work of{" "}
-            <strong>The Jack Murray Foundation</strong>, the registered charity
+            <strong>The Jack Murray Trust</strong>, the registered charity
             founded in memory of Jack — known to friends as Stig.
           </p>
         </div>
