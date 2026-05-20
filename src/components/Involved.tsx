@@ -52,9 +52,6 @@ export default function Involved() {
               </div>
               <h3 className="font-bold text-2xl tracking-[-0.014em] mb-2.5 text-ink">{item.title}</h3>
               <p className="text-base leading-[1.55] text-muted flex-1 text-pretty">{item.desc}</p>
-              <span className="absolute top-8 right-8 text-accent transition-transform duration-200 group-hover:translate-x-1">
-                <Icon name="arrow" size={18} />
-              </span>
             </Link>
           ))}
         </div>

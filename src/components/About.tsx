@@ -8,7 +8,7 @@ export default function About() {
             Our mission
           </div>
           <div className="max-w-180">
-            <p className="font-semibold text-[clamp(24px,2.8vw,36px)] leading-[1.2] tracking-[-0.018em] mb-5.5 text-balance text-ink">
+            <p className="font-semibold text-[22px] leading-[1.3] tracking-[-0.015em] mb-5.5 text-ink/80">
               At The STIG Initiative, our mission is to ensure no one faces mental health struggles alone.
             </p>
             <p className="text-[18px] leading-[1.6] text-ink/80 mb-[18px] text-pretty">
