@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "./Icon";
+import MatchGallery from "./MatchGallery";
 
 const INVOLVED = [
   {
@@ -56,19 +57,31 @@ export default function Involved() {
           ))}
         </div>
 
-        {/* Match banner */}
-        <div className="relative overflow-hidden bg-ink text-paper rounded-[22px] px-12 py-11 max-md:px-7 max-md:py-8 flex flex-col items-start gap-2">
-          <div
-            className="absolute -right-20 -top-20 w-80 h-80 rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle at center, color-mix(in oklab, var(--accent) 60%, transparent), transparent 70%)" }}
-            aria-hidden="true"
-          />
-          <div className="text-xs font-semibold tracking-[0.12em] uppercase text-accent">Annual signature event</div>
-          <div className="font-bold text-[clamp(28px,3.2vw,40px)] leading-[1.1] tracking-[-0.018em] text-paper">
-            Jack Murray Memorial Match
+        {/* Match gallery — image slideshow with overlaid content */}
+        <MatchGallery />
+
+        {/* Match video card */}
+        <div className="mt-5 grid grid-cols-[320px_1fr] max-md:grid-cols-1 gap-7 items-center bg-paper border border-line rounded-[22px] p-5 shadow-[0_18px_40px_-28px_rgba(28,43,58,0.25)]">
+          <div className="py-3.5 px-4.5 max-md:pb-0">
+            <div className="text-xs font-semibold tracking-[0.12em] uppercase text-accent mb-2.5">
+              Watch · Jack&apos;s story
+            </div>
+            <h3 className="font-bold text-[28px] leading-[1.1] tracking-[-0.02em] mb-2.5 text-ink text-balance">
+              From the pitch, with love.
+            </h3>
+            <p className="text-[15.5px] leading-[1.55] text-muted text-pretty">
+              A short film about Jack, the match, and the community that keeps showing up.
+            </p>
           </div>
-          <div className="text-[17px] text-paper/80 max-w-135 text-pretty">
-            A day on the pitch in Banbridge, in Jack&apos;s memory — and in support of everyone walking the same road.
+          <div className="relative aspect-video rounded-[18px] overflow-hidden bg-ink">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Flynne.murray.5074%2Fvideos%2F1840230503259758%2F%3Fidorvanity%3D1106544077850395&show_text=false&width=560&t=0"
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 'none' }}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              title="Jack Murray Memorial Match video"
+            />
           </div>
         </div>
       </div>
