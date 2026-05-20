@@ -31,6 +31,11 @@
   }
 }
 
+@keyframes heroKenBurns {
+  from { transform: scale(1.02); }
+  to   { transform: scale(1.12); }
+}
+
 @utility container {
   width: 100%;
   max-width: 1200px;
