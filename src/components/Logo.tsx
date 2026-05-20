@@ -1,40 +1,29 @@
+import Image from "next/image";
+import Link from "next/link";
+
 interface LogoProps {
   footer?: boolean;
 }
 
 export default function Logo({ footer = false }: LogoProps) {
-  if (footer) {
-    return (
-      <a href="/" className="logo">
-        {/* Icon-only variant — stays legible on the dark footer background */}
-        <img
-          src="/Stig-icon.svg"
-          alt=""
-          aria-hidden="true"
-          className="logo-icon"
-          style={{ height: 40, width: "auto" }}
-        />
-        <span className="logo-text">
-          <span className="logo-name">The Stig Initiative</span>
-          <span className="logo-sub">The Jack Murray Trust</span>
-        </span>
-      </a>
-    );
-  }
-
   return (
-    <a href="#top" className="logo">
-      <img
+    <Link href={footer ? "/" : "/#top"} className="inline-flex items-center gap-3">
+      <Image
         src="/Stig-icon.svg"
         alt=""
-        aria-hidden="true"
-        className="logo-icon"
-        style={{ height: 40, width: "auto" }}
+        aria-hidden
+        width={40}
+        height={40}
+        className="block flex-none"
       />
-      <span className="logo-text">
-        <span className="logo-name">The Stig Initiative</span>
-        <span className="logo-sub">The Jack Murray Trust</span>
+      <span className="flex flex-col leading-[1.05]">
+        <span className={`font-bold text-[17px] tracking-[-0.01em] ${footer ? "text-paper" : "text-ink"}`}>
+          The Stig Initiative
+        </span>
+        <span className={`text-[11.5px] font-normal tracking-[0.01em] max-sm:hidden ${footer ? "text-paper/55" : "text-muted"}`}>
+          The Jack Murray Trust
+        </span>
       </span>
-    </a>
+    </Link>
   );
 }
