@@ -4,13 +4,46 @@ import { useState } from "react";
 import Icon from "./Icon";
 
 interface ContactFormProps {
-  email: string;
+  type: string;
 }
 
-export default function ContactForm({ email }: ContactFormProps) {
-  const [submitted, setSubmitted] = useState(false);
+export default function ContactForm({ type }: ContactFormProps) {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  if (submitted) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      type,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const { error } = await res.json();
+        throw new Error(error ?? "Something went wrong");
+      }
+
+      setStatus("success");
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
     return (
       <div className="contact-form" style={{ textAlign: "center", padding: 48 }}>
         <div
@@ -57,7 +90,7 @@ export default function ContactForm({ email }: ContactFormProps) {
   }
 
   return (
-    <form className="contact-form" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-row">
         <label htmlFor="name">
           Your name <span className="req">*</span>
@@ -99,12 +132,20 @@ export default function ContactForm({ email }: ContactFormProps) {
           placeholder="Take your time. Share whatever feels right."
         />
       </div>
+
+      {status === "error" && (
+        <p style={{ color: "red", fontSize: 14, margin: "0 0 12px" }}>
+          {errorMsg}. Please try again or email us directly.
+        </p>
+      )}
+
       <button
         type="submit"
         className="btn btn-primary form-submit"
         style={{ background: "var(--accent)" }}
+        disabled={status === "loading"}
       >
-        Send message <Icon name="arrow" size={18} />
+        {status === "loading" ? "Sending…" : <>Send message <Icon name="arrow" size={18} /></>}
       </button>
       <p className="form-foot">
         By sending, you agree we may contact you at the email or phone above.

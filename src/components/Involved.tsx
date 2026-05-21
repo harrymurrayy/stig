@@ -49,12 +49,6 @@ export default function Involved() {
               </div>
               <h3 className="involved-title">{item.title}</h3>
               <p className="involved-desc">{item.desc}</p>
-              <span
-                className="involved-arrow"
-                style={{ color: "var(--accent)" }}
-              >
-                <Icon name="arrow" size={18} />
-              </span>
             </a>
           ))}
         </div>
