@@ -4,13 +4,46 @@ import { useState } from "react";
 import Icon from "./Icon";
 
 interface ContactFormProps {
-  email: string;
+  type: string;
 }
 
-export default function ContactForm({ email }: ContactFormProps) {
-  const [submitted, setSubmitted] = useState(false);
+export default function ContactForm({ type }: ContactFormProps) {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  if (submitted) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      type,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const { error } = await res.json();
+        throw new Error(error ?? "Something went wrong");
+      }
+
+      setStatus("success");
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
     return (
       <div className="bg-paper-2 border border-line rounded-[22px] p-12 text-center shadow-[0_24px_60px_-20px_rgba(42,37,33,0.16)]">
         <div className="w-14 h-14 mx-auto mb-4.5 rounded-2xl bg-[color-mix(in_oklab,var(--accent)_14%,var(--paper))] grid place-items-center text-accent">
@@ -27,12 +60,7 @@ export default function ContactForm({ email }: ContactFormProps) {
   return (
     <form
       className="bg-paper-2 border border-line rounded-[22px] p-9 max-sm:p-6 shadow-[0_24px_60px_-20px_rgba(42,37,33,0.16)]"
-      onSubmit={(e) => {
-        e.preventDefault();
-        // TODO: wire up to email API using address: email
-        console.log("Submitting to", email);
-        setSubmitted(true);
-      }}
+      onSubmit={handleSubmit}
     >
       {[
         { id: "name", label: "Your name", type: "text", placeholder: "What should we call you?", required: true },
@@ -69,11 +97,19 @@ export default function ContactForm({ email }: ContactFormProps) {
           className="font-[inherit] text-[15.5px] bg-paper border-[1.5px] border-line rounded-xl px-4 py-[13px] text-ink transition-colors duration-150 focus:outline-none focus:border-accent resize-y min-h-35"
         />
       </div>
+
+      {status === "error" && (
+        <p style={{ color: "red", fontSize: 14, margin: "0 0 12px" }}>
+          {errorMsg}. Please try again or email us directly.
+        </p>
+      )}
+
       <button
         type="submit"
         className="w-full flex items-center justify-center gap-2 py-4 px-5.5 rounded-full font-semibold text-base text-white bg-accent hover:brightness-105 transition-all duration-150 hover:-translate-y-px mt-1.5"
+        disabled={status === "loading"}
       >
-        Send message <Icon name="arrow" size={18} />
+        {status === "loading" ? "Sending…" : <>Send message <Icon name="arrow" size={18} /></>}
       </button>
       <p className="mt-4 text-[13px] text-muted text-center text-pretty">
         By sending, you agree we may contact you at the email or phone above. We&apos;ll never share your details.
