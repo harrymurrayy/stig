@@ -4,7 +4,7 @@ import Icon from "./Icon";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-paper/80 pt-18 pb-8">
+    <footer className="bg-[linear-gradient(160deg,#070f18_0%,#111f2e_55%,#0b1620_100%)] text-paper/80 pt-18 pb-8">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-12 max-md:gap-8 pb-14 border-b border-paper/10">
           <div>
