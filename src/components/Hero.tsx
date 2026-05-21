@@ -16,7 +16,7 @@ export default function Hero() {
           Banbridge, Northern Ireland · Peer-led
         </div> */}
 
-        <h1 className="font-bold text-[clamp(40px,6.6vw,88px)] leading-[1.02] tracking-[-0.025em] mt-7 mb-5.5 text-balance text-paper [text-shadow:0_2px_28px_rgba(0,0,0,0.45)]">
+        <h1 className="font-bold text-[clamp(40px,6.6vw,88px)] leading-[1.02] tracking-tight mt-7 mb-5.5 text-balance text-paper [text-shadow:0_2px_28px_rgba(0,0,0,0.45)]">
           You don&apos;t have to{" "}
           <span className="italic text-accent [text-shadow:0_2px_24px_rgba(0,0,0,0.4)]">
             face this alone.
