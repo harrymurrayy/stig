@@ -8,6 +8,7 @@ import Icon from "./Icon";
 const NAV_LINKS = [
   { href: "/#about", label: "About" },
   { href: "/#services", label: "Services" },
+  { href: "/#events", label: "Events" },
   { href: "/#involved", label: "Get Involved" },
   { href: "/#donate", label: "Donate" },
 ];

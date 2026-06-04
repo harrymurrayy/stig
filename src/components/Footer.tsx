@@ -17,6 +17,7 @@ export default function Footer() {
             <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Explore</div>
             <Link href="/#about" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">About</Link>
             <Link href="/#services" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Services</Link>
+            <Link href="/#events" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Events</Link>
             <Link href="/#involved" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Get Involved</Link>
             <Link href="/#donate" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Donate</Link>
           </div>
@@ -26,7 +27,8 @@ export default function Footer() {
             <Link href="/contact?type=volunteer" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Volunteer</Link>
             <Link href="/contact?type=fundraise" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Fundraise</Link>
             <Link href="/contact?type=partner" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Partner</Link>
-            <a href="mailto:hello@thestigfoundation.com" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">hello@thestigfoundation.com</a>
+            <a href="mailto:hello@thestiginitiative.com" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">hello@thestiginitiative.com</a>
+            <a href="tel:07526484738" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">07526 484738</a>
           </div>
           <div className="flex flex-col gap-2.5">
             <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Follow</div>
@@ -51,7 +53,7 @@ export default function Footer() {
 
         <div className="flex justify-between max-sm:flex-col max-sm:gap-2 pt-7 text-[13px] text-paper/50">
           <div>© {new Date().getFullYear()} The Jack Murray Trust Ltd.</div>
-          <div>Registered Charity [number TBC]</div>
+          <div>Company Reg. NI741121</div>
         </div>
       </div>
     </footer>
