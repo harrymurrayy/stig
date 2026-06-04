@@ -58,6 +58,13 @@ export default function Icon({ name, size = 28, stroke = "currentColor" }: IconP
           <path d="M9 10h6M9 13h4" />
         </svg>
       );
+    case "advice":
+      return (
+        <svg {...common}>
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="M8 8h8M8 11.5h8M8 15h5" />
+        </svg>
+      );
     case "volunteer":
       return (
         <svg {...common}>

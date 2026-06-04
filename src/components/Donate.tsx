@@ -30,7 +30,7 @@ export default function Donate() {
               {[
                 "£10 — comfort items in a Stig's Package",
                 "£50 — a Circles drop-in evening",
-                "£250 — a single therapy session via Stig's Grants",
+                "£250 — a block of therapy sessions via Stig's Grants",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3.5 text-[15.5px] text-ink">
                   <span className="w-2 h-2 rounded-full bg-accent flex-none" />

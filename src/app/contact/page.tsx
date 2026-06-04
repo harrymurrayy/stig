@@ -27,6 +27,24 @@ const TYPES: Record<string, { title: string; intro: string; email: string; tag: 
     email: "hello@thestiginitiative.com",
     tag: "Partner",
   },
+  sponsor: {
+    title: "Sponsor the Jack Murray Memorial Match",
+    intro: "We'd love to hear from any business interested in sponsoring this year's Jack Murray Memorial Match. Tell us a bit about your organisation and we'll be in touch.",
+    email: "hello@thestiginitiative.com",
+    tag: "Match sponsorship",
+  },
+  "stig-fc": {
+    title: "Join Stig FC",
+    intro: "Register your interest in joining Stig FC — we'll be in touch with details.",
+    email: "hello@thestiginitiative.com",
+    tag: "Stig FC",
+  },
+  marathon: {
+    title: "Run Dublin Marathon 2027",
+    intro: "Register your interest in running the Dublin Marathon 2027 for The Stig Initiative. We'll be in touch with everything you need to get started.",
+    email: "hello@thestiginitiative.com",
+    tag: "Dublin Marathon 2027",
+  },
   default: {
     title: "Get in touch",
     intro: "Send us a message and we'll come back to you. Mention what's on your mind and we'll route it to the right person.",
@@ -67,7 +85,8 @@ export default async function ContactPage({
                 If you or someone you love is in immediate danger, please call{" "}
                 <strong className="text-ink">999</strong>, or contact Lifeline on{" "}
                 <strong className="text-ink">0808 808 8000</strong>{" "}
-                (free, 24/7 across Northern Ireland).
+                (free, 24/7 across Northern Ireland). You can also text{" "}
+                <strong className="text-ink">SHOUT to 85258</strong> for free, confidential 24/7 text support.
               </div>
             </div>
 

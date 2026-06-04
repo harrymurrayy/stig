@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Events from "@/components/Events";
 import Involved from "@/components/Involved";
 import Donate from "@/components/Donate";
 import Footer from "@/components/Footer";
@@ -14,8 +15,9 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Events />
         <Involved />
-        <Donate />
+        {/* <Donate /> */}
       </main>
       <Footer />
     </>
