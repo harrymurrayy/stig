@@ -19,7 +19,6 @@ export default function Footer() {
             <Link href="/#services" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Services</Link>
             <Link href="/#events" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Events</Link>
             <Link href="/#involved" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Get Involved</Link>
-            <Link href="/#donate" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Donate</Link>
           </div>
           <div className="flex flex-col gap-2.5">
             <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Get in touch</div>
