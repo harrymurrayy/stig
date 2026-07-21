@@ -3,27 +3,20 @@ import Link from "next/link";
 
 interface LogoProps {
   footer?: boolean;
+  size?: number;
+  className?: string;
 }
 
-export default function Logo({ footer = false }: LogoProps) {
+export default function Logo({ footer = false, size = 80, className = "" }: LogoProps) {
   return (
-    <Link href={footer ? "/" : "/#top"} className="inline-flex items-center gap-3">
+    <Link href={footer ? "/" : "/#top"} className="inline-flex items-center">
       <Image
-        src="/Stig-icon.svg"
-        alt=""
-        aria-hidden
-        width={40}
-        height={40}
-        className="block flex-none"
+        src={footer ? "/logo-white.svg" : "/logo-transparent.svg"}
+        alt="The Stig Initiative — The Jack Murray Trust"
+        width={size}
+        height={size}
+        className={`block flex-none ${className}`}
       />
-      <span className="flex flex-col leading-[1.05]">
-        <span className={`font-bold text-[17px] tracking-[-0.01em] ${footer ? "text-paper" : "text-ink"}`}>
-          The Stig Initiative
-        </span>
-        <span className={`text-[11.5px] font-normal tracking-[0.01em] max-sm:hidden ${footer ? "text-paper/55" : "text-muted"}`}>
-          The Jack Murray Trust
-        </span>
-      </span>
     </Link>
   );
 }
