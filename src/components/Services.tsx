@@ -7,7 +7,8 @@ type Service = {
   icon: string;
   name: string;
   meta: string;
-  body: string;
+  body?: string;
+  sections?: { label: string; body: string }[];
   action?: { label: string; href: string };
   comingSoon?: boolean;
 };
@@ -15,16 +16,15 @@ type Service = {
 const SERVICES: Service[] = [
   {
     icon: "circle",
-    name: "Stig's Circles",
-    meta: "Ages 18–25 · Fortnightly · Free · No booking",
-    body: "A drop-in space to connect with peers and find a listening ear, free from judgement or stigma — talk as little or as much as you choose. Our groups are run by people with lived experience of suicide and mental health struggles, and at each one you'll find someone trained in Mental Health First Aid or ASIST.",
-    action: { label: "Find a Circle", href: "/contact?type=support" },
+    name: "Monthly Event 18+",
+    meta: "Ages 18+ · Monthly · Free",
+    body: "Keep an eye on our socials to book a place on our monthly event — padel, hiking, Let's Go Hydro, something to suit everyone.",
   },
   {
     icon: "companion",
     name: "Stig's Companion",
-    meta: "Bereavement support · Peer-led · Not counselling",
-    body: "For anyone bereaved by suicide. Everyone here shares a singular bond — a loss that's indescribable to others — so you'll find people who understand without you having to explain. It isn't a counselling group; it's a space for mutual understanding and support, on a road we're walking too.",
+    meta: "Bereavement support · Peer-led",
+    body: "For anyone bereaved by suicide. Everyone here shares a singular bond — a loss that's indescribable to others — so you'll find people who understand without you having to explain. A place for mutual understanding and support on a road we are walking too. If you feel you would like support or a listening ear, please contact us.",
     action: { label: "Get in touch", href: "/contact?type=support" },
   },
   {
@@ -43,10 +43,18 @@ const SERVICES: Service[] = [
   },
   {
     icon: "talk",
-    name: "Stig Talk",
-    meta: "Education · Coming soon",
-    body: "Suicide-prevention talks for schools, clubs and workplaces across the community. We're training our team now and will share more soon.",
-    comingSoon: true,
+    name: "Training & Education",
+    meta: "Community outreach",
+    sections: [
+      {
+        label: "Training",
+        body: "Keep an eye on our social media for upcoming suicide prevention courses.",
+      },
+      {
+        label: "Education",
+        body: "Suicide-prevention talks for schools, clubs and workplaces across the community. We're training our team now and will share more soon.",
+      },
+    ],
   },
 ];
 
@@ -153,7 +161,7 @@ export default function Services() {
   const totalCount = COUNT_WORDS[SERVICES.length + 1] ?? String(SERVICES.length + 1);
 
   return (
-    <section id="services" className="py-27.5 max-md:py-20 bg-paper-2">
+    <section id="services" className="pt-14 pb-27.5 max-md:pt-8 max-md:pb-20 bg-paper-2">
       <div className="container">
 
         {/* Section header */}
@@ -185,9 +193,24 @@ export default function Services() {
                   <p className="text-[12.5px] font-semibold tracking-[0.08em] uppercase text-muted mt-2.5 mb-[18px]">
                     {s.meta}
                   </p>
-                  <p className="text-[18px] leading-[1.62] text-ink/80 max-w-[62ch] text-pretty">
-                    {s.body}
-                  </p>
+                  {s.sections ? (
+                    <div className="flex flex-col gap-6">
+                      {s.sections.map((sec) => (
+                        <div key={sec.label}>
+                          <h4 className="text-[13px] font-semibold tracking-[0.08em] uppercase text-accent mb-1.5">
+                            {sec.label}
+                          </h4>
+                          <p className="text-[18px] leading-[1.62] text-ink/80 max-w-[62ch] text-pretty">
+                            {sec.body}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-[18px] leading-[1.62] text-ink/80 max-w-[62ch] text-pretty">
+                      {s.body}
+                    </p>
+                  )}
                   <ServiceAction action={s.action} comingSoon={s.comingSoon} />
                 </div>
               </div>

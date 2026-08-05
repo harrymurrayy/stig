@@ -8,7 +8,9 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ type }: ContactFormProps) {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -20,7 +22,8 @@ export default function ContactForm({ type }: ContactFormProps) {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
       type,
     };
 
@@ -47,12 +50,25 @@ export default function ContactForm({ type }: ContactFormProps) {
     return (
       <div className="bg-paper-2 border border-line rounded-[22px] p-12 text-center shadow-[0_24px_60px_-20px_rgba(42,37,33,0.16)]">
         <div className="w-14 h-14 mx-auto mb-4.5 rounded-2xl bg-[color-mix(in_oklab,var(--accent)_14%,var(--paper))] grid place-items-center text-accent">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M5 12l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="font-bold text-2xl tracking-[-0.01em] mb-2 text-ink">Message sent</h2>
-        <p className="text-muted">We&apos;ll come back to you at the email you provided. Take care.</p>
+        <h2 className="font-bold text-2xl tracking-[-0.01em] mb-2 text-ink">
+          Message sent
+        </h2>
+        <p className="text-muted">
+          We&apos;ll come back to you at the email you provided. Take care.
+        </p>
       </div>
     );
   }
@@ -63,17 +79,41 @@ export default function ContactForm({ type }: ContactFormProps) {
       onSubmit={handleSubmit}
     >
       {[
-        { id: "name", label: "Your name", type: "text", placeholder: "What should we call you?", required: true },
-        { id: "email", label: "Email", type: "email", placeholder: "you@example.com", required: true },
-        { id: "phone", label: "Phone", type: "tel", placeholder: "07…", required: false },
+        {
+          id: "name",
+          label: "Your name",
+          type: "text",
+          placeholder: "What should we call you?",
+          required: true,
+        },
+        {
+          id: "email",
+          label: "Email",
+          type: "email",
+          placeholder: "you@example.com",
+          required: true,
+        },
+        {
+          id: "phone",
+          label: "Phone",
+          type: "tel",
+          placeholder: "07123 456789",
+          required: false,
+        },
       ].map((field) => (
         <div key={field.id} className="flex flex-col gap-2 mb-4.5">
-          <label htmlFor={field.id} className="text-[13px] font-semibold tracking-[0.04em] text-ink">
+          <label
+            htmlFor={field.id}
+            className="text-[13px] font-semibold tracking-[0.04em] text-ink"
+          >
             {field.label}{" "}
-            {field.required
-              ? <span className="text-accent">*</span>
-              : <span className="text-muted font-normal tracking-normal">(optional)</span>
-            }
+            {field.required ? (
+              <span className="text-accent">*</span>
+            ) : (
+              <span className="text-muted font-normal tracking-normal">
+                (optional)
+              </span>
+            )}
           </label>
           <input
             id={field.id}
@@ -86,7 +126,10 @@ export default function ContactForm({ type }: ContactFormProps) {
         </div>
       ))}
       <div className="flex flex-col gap-2 mb-4.5">
-        <label htmlFor="message" className="text-[13px] font-semibold tracking-[0.04em] text-ink">
+        <label
+          htmlFor="message"
+          className="text-[13px] font-semibold tracking-[0.04em] text-ink"
+        >
           Message <span className="text-accent">*</span>
         </label>
         <textarea
@@ -109,10 +152,17 @@ export default function ContactForm({ type }: ContactFormProps) {
         className="w-full flex items-center justify-center gap-2 py-4 px-5.5 rounded-full font-semibold text-base text-white bg-accent hover:brightness-105 transition-all duration-150 hover:-translate-y-px mt-1.5"
         disabled={status === "loading"}
       >
-        {status === "loading" ? "Sending…" : <>Send message <Icon name="arrow" size={18} /></>}
+        {status === "loading" ? (
+          "Sending…"
+        ) : (
+          <>
+            Send message <Icon name="arrow" size={18} />
+          </>
+        )}
       </button>
       <p className="mt-4 text-[13px] text-muted text-center text-pretty">
-        By sending, you agree we may contact you at the email or phone above. We&apos;ll never share your details.
+        By sending, you agree we may contact you at the email or phone above.
+        We&apos;ll never share your details.
       </p>
     </form>
   );

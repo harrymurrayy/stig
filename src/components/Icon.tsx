@@ -114,6 +114,14 @@ export default function Icon({ name, size = 28, stroke = "currentColor" }: IconP
           <path d="M14 4c.5 2.5 2 4 4.5 4.5" />
         </svg>
       );
+    case "linkedin":
+      return (
+        <svg {...common}>
+          <rect x="3" y="3" width="18" height="18" rx="3" />
+          <path d="M8 10.5V17M8 7.2v.1" />
+          <path d="M12 17v-4a2.2 2.2 0 014.4 0V17M12 10.5V17" />
+        </svg>
+      );
     case "heart":
       return (
         <svg {...common}>

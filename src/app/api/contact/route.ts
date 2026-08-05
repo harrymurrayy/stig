@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const { error } = await resend.emails.send({
-    from: "The Stig Foundation <noreply@thestiginitiative.com>",
+    from: "The Stig Initiative <noreply@thestiginitiative.com>",
     to,
     replyTo: email,
     subject: subjectLine(type ?? "general", name),

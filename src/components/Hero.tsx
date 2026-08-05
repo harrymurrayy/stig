@@ -43,24 +43,6 @@ export default function Hero() {
             Get Involved
           </Link>
         </div>
-
-        <div className="mt-11 inline-flex items-center gap-4 flex-wrap justify-center text-[14px] text-paper/78">
-          <div>
-            <strong className="text-paper">No booking.</strong> No referral. No
-            waiting list.
-          </div>
-          <span className="w-1 h-1 rounded-full bg-paper/40" />
-          <div>
-            If you need to talk to someone right now,{" "}
-            <Link
-              href="/contact?type=support"
-              className="text-paper border-b border-current pb-px"
-            >
-              reach out here
-            </Link>
-            .
-          </div>
-        </div>
       </div>
     </section>
   );
