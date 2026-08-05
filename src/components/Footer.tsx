@@ -10,36 +10,117 @@ export default function Footer() {
           <div>
             <Logo footer />
             <p className="mt-4 max-w-70 text-[14.5px] leading-[1.55] text-paper/60">
-              Peer-led suicide prevention and grief support, rooted in Banbridge.
+              Peer-led suicide prevention and grief support, rooted in
+              Banbridge.
             </p>
           </div>
           <div className="flex flex-col gap-2.5">
-            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Explore</div>
-            <Link href="/#about" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">About</Link>
-            <Link href="/#services" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Services</Link>
-            <Link href="/#events" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Events</Link>
-            <Link href="/#involved" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Get Involved</Link>
+            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">
+              Explore
+            </div>
+            <Link
+              href="/#about"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              About
+            </Link>
+            <Link
+              href="/#services"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Services
+            </Link>
+            <Link
+              href="/#events"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Events
+            </Link>
+            <Link
+              href="/#involved"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Get Involved
+            </Link>
           </div>
           <div className="flex flex-col gap-2.5">
-            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Get in touch</div>
-            <Link href="/contact?type=support" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Support</Link>
-            <Link href="/contact?type=volunteer" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Volunteer</Link>
-            <Link href="/contact?type=fundraise" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Fundraise</Link>
-            <Link href="/contact?type=partner" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">Partner</Link>
-            <a href="mailto:hello@thestiginitiative.com" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">hello@thestiginitiative.com</a>
-            <a href="tel:07526484738" className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150">07526 484738</a>
+            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">
+              Get in touch
+            </div>
+            <Link
+              href="/contact?type=support"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Support
+            </Link>
+            <Link
+              href="/contact?type=volunteer"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Volunteer
+            </Link>
+            <Link
+              href="/contact?type=fundraise"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Fundraise
+            </Link>
+            <Link
+              href="/contact?type=partner"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Partner
+            </Link>
+            <a
+              href="mailto:hello@thestiginitiative.com"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              hello@thestiginitiative.com
+            </a>
+            <div className="flex items-center gap-2.5">
+              <a
+                href="tel:07526484738"
+                className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+              >
+                07526 484738
+              </a>
+              <a
+                href="https://wa.me/447526484738"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[13px] font-semibold text-paper/70 hover:text-paper transition-colors duration-150"
+              >
+                (WhatsApp)
+              </a>
+            </div>
           </div>
           <div className="flex flex-col gap-2.5">
-            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">Follow</div>
+            <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">
+              Follow
+            </div>
             <div className="flex gap-2.5 mt-1">
               {[
-                { name: "ig", label: "Instagram" },
-                { name: "fb", label: "Facebook" },
-                { name: "tt", label: "TikTok" },
+                {
+                  name: "ig",
+                  label: "Instagram",
+                  href: "https://www.instagram.com/thestiginitiative/",
+                },
+                {
+                  name: "fb",
+                  label: "Facebook",
+                  href: "https://www.facebook.com/people/The-Stig-Initiative/61588765630227/",
+                },
+                {
+                  name: "tt",
+                  label: "TikTok",
+                  href: "https://www.tiktok.com/@the.stig.iniative",
+                },
               ].map((s) => (
                 <a
                   key={s.name}
-                  href="#"
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
                   className="w-9.5 h-9.5 rounded-[10px] border border-paper/18 grid place-items-center transition-all duration-150 hover:bg-accent hover:border-accent hover:text-white"
                 >
@@ -50,9 +131,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-between max-sm:flex-col max-sm:gap-2 pt-7 text-[13px] text-paper/50">
-          <div>© {new Date().getFullYear()} The Jack Murray Trust Ltd.</div>
-          <div>Company Reg. NI741121</div>
+        <div className="flex flex-col gap-5 pt-7 text-[13px] text-paper/50">
+          <div className="flex justify-between max-sm:flex-col max-sm:gap-2">
+            <div>© {new Date().getFullYear()} The Jack Murray Trust Ltd.</div>
+            <div>Company Reg. NI741121</div>
+          </div>
+          <div className="flex justify-center pt-5 border-t border-paper/10">
+            <a
+              href="https://www.linkedin.com/in/harry-ban-murray/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-paper/80 transition-colors duration-150"
+            >
+              Site Built by Harry Murray
+              <Icon name="linkedin" size={15} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

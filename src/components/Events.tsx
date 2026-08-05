@@ -36,13 +36,13 @@ export default function Events() {
             />
             <div className="relative z-20 p-8">
               <div className="text-xs font-semibold tracking-[0.12em] uppercase text-accent mb-2">
-                November 2026
+                13th September 2026
               </div>
               <h3 className="font-bold text-[26px] leading-[1.1] tracking-[-0.018em] mb-2 text-paper">
                 Jack Murray Memorial Match 2026
               </h3>
               <p className="text-[15px] leading-[1.55] text-paper/80 mb-5 text-pretty max-w-[460px]">
-                The Jack Murray Memorial Match will take place in November 2026. We would love to hear from any business who would like to sponsor this year's event.
+                The Jack Murray Memorial Match will take place on 13th September 2026 at Banbridge Town Football Club. We would love to hear from any business who would like to sponsor this year's event.
               </p>
               <Link
                 href="/contact?type=sponsor"
