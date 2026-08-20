@@ -13,6 +13,7 @@ const LEFT_LINKS = [
 
 const RIGHT_LINKS = [
   { href: "/#involved", label: "Get Involved" },
+  { href: "/shop", label: "Shop" },
 ];
 
 const NAV_LINKS = [...LEFT_LINKS, ...RIGHT_LINKS];

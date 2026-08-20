@@ -42,6 +42,12 @@ export default function Footer() {
             >
               Get Involved
             </Link>
+            <Link
+              href="/shop"
+              className="text-[15px] text-paper/70 hover:text-paper transition-colors duration-150"
+            >
+              Shop
+            </Link>
           </div>
           <div className="flex flex-col gap-2.5">
             <div className="text-xs font-bold tracking-[0.12em] uppercase text-paper mb-1.5">
